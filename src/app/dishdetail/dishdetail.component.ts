@@ -115,7 +115,6 @@ export class DishdetailComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.commentForm.value);
     this.dishservice.postComment(this.dish._id, this.commentForm.value)
       .subscribe(dish => {this.dish = dish;this.myComment=true;
       });
