@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    
+
     environment {
         PATH ='C:/Program Files/nodejs/'
     }
@@ -9,13 +9,13 @@ pipeline {
         stage('installing modules'){
             steps {
                 echo 'installing node modules'
-                sh 'npm install'
+                bat 'npm install'
             }
         }
         stage('angular build'){
             steps {
                 echo 'angular build'
-                sh 'ng build --prod'
+                bat 'ng build --prod'
             }
         }
     }
