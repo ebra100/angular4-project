@@ -40,7 +40,7 @@
         <p mat-line>
           <span> -- {{comment.author.firstname}} {{comment.author.lastname}}, {{comment.updatedAt | date }} </span>
         
-      <mat-chip-list *ngIf="isMyComment(comment) || myComment">
+      <mat-chip-list *ngIf="isMyComment(comment) ">
        <mat-chip (click)="editComment(comment)">Edit</mat-chip>
        <mat-chip (click)="deleteComment(comment)" selected="true" color='warn' >Delete</mat-chip>
       </mat-chip-list>

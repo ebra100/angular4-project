@@ -3,10 +3,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+
 import { MatButtonModule, MatCheckboxModule, MatDatepickerModule, MatFormFieldModule,
   MatInputModule, MatRadioModule, MatSelectModule, MatSliderModule,
   MatSlideToggleModule, MatToolbarModule, MatListModule, MatGridListModule,
   MatCardModule, MatIconModule, MatProgressSpinnerModule, MatDialogModule } from '@angular/material';
+
 import {MatChipsModule} from '@angular/material';
 import { FacebookModule } from 'ngx-facebook';
 
@@ -46,6 +48,7 @@ import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +65,8 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     FavoritesComponent,
     SignUpComponent,
     ForgotPasswordComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    ChangePasswordComponent
   ],
   imports: [
     FacebookModule.forRoot(),
@@ -105,7 +109,8 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
         LoginComponent,
         SignUpComponent,
         ForgotPasswordComponent,
-        ResetPasswordComponent
+        ResetPasswordComponent,
+        ChangePasswordComponent
   ],
   bootstrap: [AppComponent]
 })

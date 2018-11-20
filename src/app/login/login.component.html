@@ -13,13 +13,12 @@
 
   <mat-dialog-content>
     <p>
-    <mat-form-field dividerColor="{{password.invalid && !password.pristine && !facebookLogin ? 'warn' : 'primary'}}">
+    <mat-form-field dividerColor="{{username.invalid && !username.pristine && !facebookLogin ? 'warn' : 'primary'}}">
         <input matInput placeholder="Username" type="text" [(ngModel)]="user.username" name="username" #username="ngModel" 
         [required]="!facebookLogin">
         <mat-hint>
           <span [hidden]="username.pristine">
-          <span [hidden]="!username.errors?.required">username is required</span>
-          </span>
+            <span[hidden]="!username.errors?.required">username is required</span>
         </mat-hint>
       </mat-form-field>
       <mat-form-field dividerColor="{{password.invalid && !password.pristine&& !facebookLogin? 'warn' : 'primary'}}">

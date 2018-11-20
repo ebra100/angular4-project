@@ -19,6 +19,8 @@ export class LoginComponent implements OnInit {
   errMess: string;
   facebookLogin:boolean=false;
   loggedIn:boolean;
+
+  
   constructor(public dialogRef: MatDialogRef<LoginComponent>,public dialog: MatDialog,private authService: AuthService,  private router:Router,
   private facebookService: FacebookService,
   private processHTTPMsgService: ProcessHTTPMsgService) { }
@@ -40,7 +42,7 @@ export class LoginComponent implements OnInit {
     this.dialogRef.close();
 
     let resetRef = this.dialog.open(ForgotPasswordComponent, {width: '400px', height: '300px'});
-
+    
     resetRef.afterClosed()
       .subscribe(result => {
         console.log(result);

@@ -30,10 +30,9 @@ interface JWTResponse {
  interface ResetRespone{
  success:any
  }
-
 @Injectable()
 export class AuthService {
-
+ user:any;
  tokenKey: string = 'JWT';
  isAuthenticated: Boolean = false;
  username: Subject<string> = new Subject<string>();
@@ -55,7 +54,6 @@ export class AuthService {
     this.http.get<JWTResponse>(baseURL + 'users/checkJWTtoken')
     .subscribe(res => {
       console.log("JWT Token Valid: ", res);
-      this.sendUsername(res.user.username);
     },
     err => {
       console.log("JWT Token invalid: ", err);
@@ -138,6 +136,7 @@ logInWithFacebook(accessToken:any,callback) {
        }}}}
 
 resetPassword(user:any) {
+ this.user=user;
  return this.http.post<ResetRespone>(baseURL + 'users/forgettPassword',
    {"email":user.email})
    .map(res => {
@@ -160,6 +159,28 @@ return this.http.post<ResetRespone>(baseURL + 'users/verifycode',{"code":user.co
      return {'success':false}; 
   })
    .catch(error => { return this.processHTTPMsgService.handleError(error); });
+}
+
+changePassword(user:any){
+  console.log(this.user.email);
+  console.log(user.password);
+  let self=this;
+  return this.http.post<ResetRespone>(baseURL + 'users/changepassword',
+  {"password":user.password,"email":self.user.email})
+  .map(res=>{
+
+   if(res.success)
+   {
+      console.log(res);
+       return {'success':true};
+   }
+   else {
+       console.log(res);
+       return {'success':false};
+       }
+  })
+     .catch(error => { return this.processHTTPMsgService.handleError(error); });
+
 }
   logOut() {
 

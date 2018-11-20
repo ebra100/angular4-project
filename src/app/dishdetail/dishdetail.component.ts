@@ -79,7 +79,6 @@ export class DishdetailComponent implements OnInit {
        return this.dishservice.getDish(params['id']); })
       .subscribe(dish => { 
           this.dish = dish; 
-          console.log("82",dish._id);
           this.setPrevNext(dish._id); 
           this.visibility = 'shown';
           this.favoriteService.isFavorite(this.dish._id)
@@ -118,9 +117,10 @@ export class DishdetailComponent implements OnInit {
   onSubmit() {
     console.log(this.commentForm.value);
     this.dishservice.postComment(this.dish._id, this.commentForm.value)
-      .subscribe(dish => {this.dish = dish;this.myComment=true;});
+      .subscribe(dish => {this.dish = dish;this.myComment=true;
+      });
     this.commentForm.reset({
-      rating: 5,
+      rating: 5, 
       comment: ''
     });
     this.commentFormDirective.resetForm();
