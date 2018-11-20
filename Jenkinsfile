@@ -17,7 +17,7 @@ pipeline {
             steps {
                 withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) {  
                 echo 'angular build'
-                sh 'ng build --prod'
+                sh 'npm run ng build --prod'
             }
             }
         }
