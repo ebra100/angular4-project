@@ -9,7 +9,7 @@ pipeline {
             steps {
                 withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) {  
                 echo 'installing node modules'
-                sh 'npm install'
+                shell 'npm install'
             }
             }
         }
@@ -17,7 +17,7 @@ pipeline {
             steps {
                 withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) {  
                 echo 'angular build'
-                sh 'npm run ng build --prod'
+                shell 'npm run ng build --prod'
             }
             }
         }
