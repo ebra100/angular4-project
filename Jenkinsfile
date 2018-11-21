@@ -18,13 +18,13 @@ pipeline {
             //}
             }
         }
-        stage('angular build'){
-            steps {
-             //   withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) {  
-               // echo 'angular build'
-                //sh 'npm run ng build --prod'
-            //}
-            }
-        }
+        // stage('angular build'){
+        //     steps {
+        //      //   withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) {  
+        //        // echo 'angular build'
+        //         //sh 'npm run ng build --prod'
+        //     //}
+        //     }
+        // }
     }
 }
