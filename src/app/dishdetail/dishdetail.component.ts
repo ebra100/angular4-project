@@ -113,7 +113,7 @@ export class DishdetailComponent implements OnInit {
 
     this.onValueChanged(); 
     }
-
+    
   onSubmit() {
     this.dishservice.postComment(this.dish._id, this.commentForm.value)
       .subscribe(dish => {this.dish = dish;this.myComment=true;
