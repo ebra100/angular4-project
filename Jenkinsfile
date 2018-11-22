@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        PATH ='C:/Program Files/Git/bin'
+        PATH ='C:/Program Files/nodejs ;C:/Program Files/Git/bin '
     }
 
     stages {
