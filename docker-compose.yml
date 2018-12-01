@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+ angular:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    container_name : angular-test
+    volumes:
+     - C:\Users\Ebrahim\Desktop\coursera1\Angular:/usr/src/app
+    ports:
+      - "4200:4200"
