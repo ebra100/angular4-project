@@ -2,7 +2,7 @@
     stages {
         stage('Test') {
             steps {
-               echo "here"
+               echo "hey ebra"
             }
         }
     }
