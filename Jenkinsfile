@@ -1,4 +1,4 @@
-agent {
+agent any {
     dockerfile {
         filename 'Dockerfile'
         label 'my-defined-label'
