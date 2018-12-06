@@ -11,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("test-image" ,"-v C:\Users\Ebrahim\Desktop\Angular:/usr/src/app")
+        app = docker.build("test-image" ,"-v C:/Users/Ebrahim/Desktop/Angular:/usr/src/app")
     }
 
     stage('Test image') {
