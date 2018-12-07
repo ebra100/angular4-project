@@ -11,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("test-image")
+        app = docker.build("ebra1995/test-image")
     }
 
     stage('Push image') {
