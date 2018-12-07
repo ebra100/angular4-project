@@ -7,24 +7,19 @@ node {
         checkout scm
     }
     
-    stage('Build image') {
+    stage('Build image and push it') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("test-image")
+       app = docker.build("test-image")
+       app.push("${env.BUILD_NUMBER}")
+       app.push("latest")
     }
 
-    stage('Push image') {
-
-        app.push()
-        app.push('latest')
-        /* Finally, we'll push the image with two tags:
-         * First, the incremental build number from Jenkins
-         * Second, the 'latest' tag.
-         * Pushing multiple tags is cheap, as all the layers are reused. */
-        // docker.withRegistry('https://registry.hub.docker.com','docker-hub-credentials') {
-        //     app.push("${env.BUILD_NUMBER}")
-        //     app.push("latest")
-        // }
-    }
+    // stage('Push image') {
+    //     docker.withRegistry('https://registry.hub.docker.com','docker-hub-credentials') {
+    //         app.push("${env.BUILD_NUMBER}")
+    //         app.push("latest")
+    //     }
+    // }
 }
