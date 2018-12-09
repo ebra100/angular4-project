@@ -30,7 +30,7 @@
 pipeline {
   agent {
     docker {
-      image 'ebra1995/test-image'
+      image 'ebra1995/testimage'
       args '-v C:/Program Files (x86)/Jenkins/workspace/angular-pipeline:/usr/src/app'
     }
   }
