@@ -8,16 +8,16 @@ node {
     
     stage('Build image') {
 
-        app = docker.build("ebra1995/test-image")
+        app = docker.build("ebra1995/test-image").inside('-v C:/Program Files (x86)/Jenkins/workspace/angular-pipeline:/usr/src/app')
     }
 
-    stage('Install And Build'){
+    // stage('Install And Build'){
 
-        app.inside{
-            sh 'npm install'
-            sh 'npm build'
-        }
-    }
+    //     app.inside{
+    //         sh 'npm install'
+    //         sh 'npm build'
+    //     }
+    // }
 
     stage('Push image') {
 
