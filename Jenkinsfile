@@ -12,7 +12,7 @@ node {
     }
 
   stage('Test image') {
-        app.inside('-v C:/Program Files (x86)/Jenkins/workspace/angular-pipeline:/usr/src/app') {
+        app.inside('-v "$PWD":/usr/src/app') {
             sh 'echo "Tests passed"'
         }
     }
