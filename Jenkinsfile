@@ -12,7 +12,7 @@ node {
     }
 
   stage('Test image') {
-        app.inside('-v $(pwd):/usr/src/app') {
+        app.inside{
             sh 'echo "Tests passed"'
         }
     }
