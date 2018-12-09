@@ -34,4 +34,11 @@ pipeline {
       args '-v C:/Program Files (x86)/Jenkins/workspace/angular-pipeline:/usr/src/app'
     }
   }
+
+  stages {
+    stage('Build') {
+      steps {
+        echo "test"
+      }
+    }
 }
