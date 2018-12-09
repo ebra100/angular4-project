@@ -8,11 +8,11 @@ node {
     
     stage('Build image') {
 
-        app = docker.build("test-image")
+        app = docker.build("ebra1995/test-image")
     }
 
   stage('Test image') {
-        app.inside('-v "$PWD":/usr/src/app') {
+        app.inside('-v C:/users/ebrahim/desktop/angular:/usr/src/app') {
             sh 'echo "Tests passed"'
         }
     }
