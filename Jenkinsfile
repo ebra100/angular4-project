@@ -1,59 +1,23 @@
-// node {
-//     def app
-
-//     stage('Clone repository') {
-
-//         checkout scm
-//     }
-    
-//     stage('Build image') {
-
-//         app = docker.build("ebra1995/test-image")
-//     }
-
-//   stage('Test image') {
-//         app.inside('-v C:/users/ebrahim/desktop/angular:/usr/src/app') {
-//             sh 'echo "Tests passed"'
-//         }
-//     }
-
-//     stage('Push image') {
-
-//         docker.withRegistry('https://registry.hub.docker.com','docker-hub-credentials') {
-//             app.push("latest")
-//         }
-//     }
-// }
-
-
 node {
-        stage("Main build") {
+    def app
 
-            checkout scm
+    stage('Clone repository') {
 
-            docker.image('ruby:2.3.1').inside {
+        checkout scm
+    }
+    
+    stage('Build image') {
 
-              stage("Install Bundler") {
-                sh "gem install bundler --no-rdoc --no-ri"
-              }
+        app = docker.build("ebra1995/test-image").withRun {c ->
+        sh 'echo here from inside container'}
+    }
 
-              stage("Use Bundler to install dependencies") {
-                sh "bundle install"
-              }
+    stage('Push image') {
 
-              stage("Build package") {
-                sh "bundle exec rake build:deb"
-              }
-
-              stage("Archive package") {
-                archive (includes: 'pkg/*.deb')
-              }
-
-           }
-
+        docker.withRegistry('https://registry.hub.docker.com','docker-hub-credentials') {
+            app.push("latest")
         }
-
-        // Clean up workspace
-        step([$class: 'WsCleanup'])
-
+    }
 }
+
+
