@@ -8,7 +8,7 @@ node {
     
     stage('Build image') {
 
-        app = docker.build("ebra1995/test-image").inside("--volume=/var/run/docker.sock:/var/run/docker.sock --add-host dockerhost:${hostIP}") {
+        app = docker.build("ebra1995/test-image").inside("--volume=/var/run/docker.sock:/var/run/docker.sock") {
    sh 'echo hey ebra'
 }
     }
