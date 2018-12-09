@@ -8,7 +8,7 @@ node {
     
     stage('Build image') {
 
-        app = docker.build("ebra1995/test-image")
+        app = docker.build("test-image")
     }
 
   stage('Test image') {
