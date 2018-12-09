@@ -8,16 +8,14 @@ node {
     
     stage('Build image') {
 
-        app = docker.build("ebra1995/test-image").inside("--volume=/var/run/docker.sock:/var/run/docker.sock") {
-   sh 'echo hey ebra'
-}
+        app = docker.build("ebra1995/test-image")
     }
 
-//   stage('Test image') {
-//         app.inside('-v C:/users/ebrahim/desktop/angular:/usr/src/app') {
-//             sh 'echo "Tests passed"'
-//         }
-//     }
+  stage('Test image') {
+        app.inside('-v $(pwd):/usr/src/app') {
+            sh 'echo "Tests passed"'
+        }
+    }
 
     stage('Push image') {
 
