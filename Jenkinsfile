@@ -7,12 +7,9 @@ node {
     }
     
     stage('Build image') {
-        sh 'docker build -t test-images .'
+       sh 'docker-compose up'
+       //  sh 'docker build -t test-images .'
        // app = docker.build("ebra1995/test-image")
-    }
-
-  stage('Test image') {
-      sh 'docker run -v /var/jenkins_home/workspace/angular-pipeline:/usr/src/app test-images'
     }
 
     stage('Push image') {
