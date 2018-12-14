@@ -8,5 +8,5 @@ COPY . /usr/src/app/
 
 EXPOSE 4200
 
-CMD /var/jenkins_home/workspace/angular-pipeline/entrypoint.sh
+CMD /usr/src/app/entrypoint.sh
 
