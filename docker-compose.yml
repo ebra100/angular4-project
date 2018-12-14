@@ -8,6 +8,6 @@ services:
     restart: unless-stopped
     container_name : angular-container
     volumes:
-     - /var/jenkins_home/workspace/angular-pipeline:/usr/src/app
+     - C:\Users\Ebrahim\Desktop\jenkins\workspace\angular-pipeline:/usr/src/app
     ports:
       - "4200:4200"
