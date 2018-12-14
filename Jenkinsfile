@@ -12,9 +12,7 @@ node {
     }
 
   stage('Test image') {
-        app.inside{
-            sh 'echo "Tests passed"'
-        }
+      sh 'docker run -v  .:/usr/src/app test-images'
     }
 
     stage('Push image') {
