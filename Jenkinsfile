@@ -7,8 +7,8 @@ node {
     }
     
     stage('Build image') {
-
-        app = docker.build("ebra1995/test-image")
+        sh 'docker-compose up'
+       // app = docker.build("ebra1995/test-image")
     }
 
   stage('Test image') {
