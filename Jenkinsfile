@@ -12,7 +12,7 @@ node {
     }
 
   stage('Test image') {
-      sh 'docker run -v  .:/usr/src/app test-images'
+      sh 'docker run -v /var/jenkins_home/workspace/angular-pipeline:/usr/src/app test-images'
     }
 
     stage('Push image') {
