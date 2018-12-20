@@ -9,5 +9,5 @@ COPY . /usr/src/app/
 RUN ls
 
 CMD ['npm',"install"]
-CMD ['npm',"build"]
+CMD ['npm',"run","ng","build"]
 
