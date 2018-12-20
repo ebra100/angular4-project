@@ -8,5 +8,6 @@ COPY . /usr/src/app/
 
 RUN ls
 
-CMD entrypoint.sh
+CMD ['npm',"install"]
+CMD ['npm',"build"]
 
