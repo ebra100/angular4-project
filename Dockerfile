@@ -8,5 +8,5 @@ COPY . /usr/src/app/
 
 RUN ls
 
-ENTRYPOINT ["/bin/bash", "-c", "usr/src/app/entrypoint.sh"]
+ENTRYPOINT ["/bin/bash", "-c", "/usr/src/app/entrypoint.sh"]
 
