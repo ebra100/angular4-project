@@ -4,7 +4,7 @@ RUN mkdir -p /usr/src/app
 
 WORKDIR /usr/src/app
 
-COPY . /usr/src/app/
+COPY /var/jenkins_home/workspace/angular-pipeline /usr/src/app/
 
 EXPOSE 4200
 

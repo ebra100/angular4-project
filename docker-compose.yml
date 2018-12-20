@@ -5,8 +5,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    container_name: angular-build
     restart: unless-stopped
     volumes:
      - /var/jenkins_home/workspace/angular-pipeline:/usr/src/app
-    ports:
-      - "4200:4200"
+   
