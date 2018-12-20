@@ -8,6 +8,5 @@ COPY . /usr/src/app/
 
 RUN ls
 
-CMD  ["bash", "/entrypoint.sh"]
-
+ENTRYPOINT ["/bin/bash", "-c", "usr/src/app/entrypoint.sh"]
 
