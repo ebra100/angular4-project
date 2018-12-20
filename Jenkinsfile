@@ -12,7 +12,7 @@ node {
     }
 
     stage('Build image') {
-       sh 'docker run --name test angular-pipeline'
+       sh 'docker run --name test -v /var/jenkins_home/workspace/angular-pipeline:/usr/src/app  angular-pipeline'
        //  sh 'docker build -t test-images .'
        // app = docker.build("ebra1995/test-image")
     }
