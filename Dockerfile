@@ -8,6 +8,6 @@ COPY . /usr/src/app/
 
 RUN ls
 
-CMD  ["npm", "start" && "npm","run","ng","build"]
+CMD  ["sh","-c","npm", "start" && "npm","run","ng","build"]
 
 
