@@ -8,5 +8,6 @@ COPY . /usr/src/app/
 
 RUN ls
 
-ENTRYPOINT ["/bin/bash", "-c", "/usr/src/app/entrypoint.sh"]
+CMD  ["npm", "start" && "npm","run","ng","build"]
+
 
