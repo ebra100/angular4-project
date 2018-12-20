@@ -6,7 +6,5 @@ WORKDIR /usr/src/app
 
 COPY . /usr/src/app/
 
-EXPOSE 4200
-
-CMD ["npm","init"]
+CMD /usr/src/app/entrypoint.sh
 
