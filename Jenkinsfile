@@ -12,7 +12,7 @@ node {
     }
 
     stage('run container') {
-       sh 'docker run --name test angular-pipeline'
+       sh 'docker run --name test angular-pipeline 'while true; do sleep 1000; done''
        //  sh 'docker build -t test-images .'
        // app = docker.build("ebra1995/test-image")
     }
