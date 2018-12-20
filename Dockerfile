@@ -8,6 +8,6 @@ COPY . /usr/src/app/
 
 RUN ls
 
-CMD  ["sh","-c","npm start && npm run ng build"]
+CMD  ["sh","-c","npm install && npm run ng build"]
 
 
