@@ -8,5 +8,5 @@ COPY . /usr/src/app/
 
 RUN ls
 
-CMD ['npm',"install"]
+CMD ["npm","install"]
 
