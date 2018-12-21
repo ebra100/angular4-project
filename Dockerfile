@@ -8,4 +8,4 @@ COPY . /usr/src/app/
 
 RUN pwd
 
-CMD  ["sh","-c","rm -r node_modules && npm cache clean && npm install --force && npm run ng build"]
+CMD  ["sh","-c","pwd && ls && npm install --force && npm run ng build"]
