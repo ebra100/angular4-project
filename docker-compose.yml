@@ -8,5 +8,4 @@ services:
     container_name: angular-build
     restart: unless-stopped
     volumes:
-     - /var/jenkins_home/workspace/angular-pipeline:/usr/src/app
-   
+     - angular-volume:/usr/src/app

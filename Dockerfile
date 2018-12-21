@@ -6,7 +6,7 @@ WORKDIR /usr/src/app
 
 COPY . /usr/src/app/
 
-RUN ls
+RUN pwd
 
 CMD  ["sh","-c","pwd &&npm install --force && npm run ng build"]
 
